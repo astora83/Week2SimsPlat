@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class raycast : MonoBehaviour
 {
+    bool can_jump = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        void can_jump();
+        
         Ray r = new Ray(transform.position, Vector3.down);
 
         Debug.DrawLine(r.origin, r.origin + (Vector3.down * 10));
@@ -27,10 +28,10 @@ public class raycast : MonoBehaviour
             {
                 Debug.Log(hit.transform.name);
                 {
-                    if (hit.transform.name == grounded)
-                        (can_jump = true);
+                    if (hit.transform.name == "ground")
+                    { can_jump = true; }
                     else;
-                    (can_jump = false);
+                    { can_jump = false; }
                 }
             }
         }

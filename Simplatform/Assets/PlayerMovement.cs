@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    bool can_jump = false;
+
     [SerializeField]
     float moveSpeed = 1;
 
@@ -27,8 +29,28 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(h,
                                   rb.velocity.y,
                                   v);
+        Ray r = new Ray(transform.position, Vector3.down);
 
-        if (Input.GetButtonDown("Jump"))
+        Debug.DrawLine(r.origin, r.origin + (Vector3.down * 10));
+
+        RaycastHit hit;
+        
+        if (Physics.Raycast(r, out hit, 10))
+        {
+            if (hit.transform != null)
+            {
+                Debug.Log(hit.transform.name);
+                {
+                    if (hit.transform.name == "ground")
+                    { can_jump = true; }
+                    else;
+                    { can_jump = false; }
+                }
+            }
+        }
+
+
+        if (Input.GetButtonDown("Jump") && can_jump == true)
         {
             jump();
         }
