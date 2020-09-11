@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using UnityEngine;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,13 +12,13 @@ public class PlayerMovement : MonoBehaviour
     float jumpSpeed = 1;
 
     Rigidbody rb;
-     Start is called before the first frame update
+     //Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-     Update is called once per frame
+     //Update is called once per frame
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
