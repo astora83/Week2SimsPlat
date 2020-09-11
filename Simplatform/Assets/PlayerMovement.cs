@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //[SerializedField]
-    //float moveSpeed = 1;
+    [SerializedField]
+    float moveSpeed = 1;
 
     [SerializedField]
     float jumpSpeed = 1;
 
     Rigidbody rb;
-    // Start is called before the first frame update
+     Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+     Update is called once per frame
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
@@ -28,17 +28,17 @@ public class PlayerMovement : MonoBehaviour
                                   rb.velocity.y,
                                   v);
 
-       // if (input.GetButtonDown("jump"));
-       // {
-            //jump();
-       // }
+        if (input.GetButtonDown("jump"));
+        {
+            jump();
+        }
         
 
-        //void jump()
+        void jump()
         {
-            //rb.velocity = new Vector3(rb.velocity.x,
-                                     // jumpSpeed,
-                                      //rb.velocity.z);
+            rb.velocity = new Vector3(rb.velocity.x,
+                                      jumpSpeed,
+                                      rb.velocity.z);
         }
     }
 }
