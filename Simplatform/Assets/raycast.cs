@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class raycast : MonoBehaviour
@@ -13,6 +14,7 @@ public class raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        void can_jump();
         Ray r = new Ray(transform.position, Vector3.down);
 
         Debug.DrawLine(r.origin, r.origin + (Vector3.down * 10));
@@ -24,6 +26,12 @@ public class raycast : MonoBehaviour
             if(hit.transform != null)
             {
                 Debug.Log(hit.transform.name);
+                {
+                    if (hit.transform.name == grounded)
+                        (can_jump = true);
+                    else;
+                    (can_jump = false);
+                }
             }
         }
     }
