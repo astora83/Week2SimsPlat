@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
                                   rb.velocity.y,
                                   v);
 
-        if (input.GetButtonDown("jump"));
+        if (Input.GetButtonDown("Jump"))
         {
             jump();
         }
