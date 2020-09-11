@@ -18,11 +18,11 @@ public class raycast : MonoBehaviour
         
         Ray r = new Ray(transform.position, Vector3.down);
 
-        Debug.DrawLine(r.origin, r.origin + (Vector3.down * 10));
+        Debug.DrawLine(r.origin, r.origin + (Vector3.down * 3));
 
         RaycastHit hit;
 
-        if(Physics.Raycast(r, out hit, 10))
+        if(Physics.Raycast(r, out hit, 3))
         {
             if(hit.transform != null)
             {

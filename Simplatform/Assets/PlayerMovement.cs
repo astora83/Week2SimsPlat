@@ -31,11 +31,11 @@ public class PlayerMovement : MonoBehaviour
                                   v);
         Ray r = new Ray(transform.position, Vector3.down);
 
-        Debug.DrawLine(r.origin, r.origin + (Vector3.down * 10));
+        Debug.DrawLine(r.origin, r.origin + (Vector3.down * 2));
 
         RaycastHit hit;
-        
-        if (Physics.Raycast(r, out hit, 10))
+
+        if (Physics.Raycast(r, out hit, 2))
         {
             if (hit.transform != null)
             {
@@ -43,10 +43,14 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (hit.transform.name == "ground")
                     { can_jump = true; }
-                    else;
+                    else
                     { can_jump = false; }
                 }
             }
+        }
+        else
+        {
+            can_jump = false;
         }
 
 
