@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializedField]
+    [SerializeField]
     float moveSpeed = 1;
 
-    [SerializedField]
+    [SerializeField]
     float jumpSpeed = 1;
 
     Rigidbody rb;
