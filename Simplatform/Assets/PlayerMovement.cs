@@ -58,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
         {
             jump();
         }
-        
+
+       
 
         void jump()
         {
@@ -66,5 +67,6 @@ public class PlayerMovement : MonoBehaviour
                                       jumpSpeed,
                                       rb.velocity.z);
         }
+
     }
 }
